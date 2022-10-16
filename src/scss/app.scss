@@ -3,23 +3,218 @@
 body {
 }
 
+// .wrapper {
+//    .header {
+//       grid-area: header;
+//       border-bottom: 0.5px solid #cfcfcf;
+//       max-width: 100%;
+//       &__container {
+//          display: flex;
+//          justify-content: space-between;
+//          align-items: center;
+//          max-width: 95%;
+//          margin: 0 auto;
+//          min-height: 81px;
+//       }
+//       &__logo {
+//       }
+//       &__shoppingcart {
+//          position: relative;
+//          .shoppingcart__circle {
+//             text-align: center;
+//             font-family: "Roboto";
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 10px;
+//             line-height: 12px;
+//             width: 13px;
+//             height: 13px;
+//             background-color: #3366ff;
+//             color: #ffffff;
+//             border-radius: 50%;
+//             position: absolute;
+//             bottom: 22px;
+//             right: -7px;
+
+//             span {
+//                position: relative;
+//                top: 0.5px;
+//             }
+//          }
+//       }
+//    }
+//    .content {
+//       &__container {
+//          max-width: 1500px;
+//          margin: 0 auto;
+//          display: grid;
+//          grid-template-columns: 0.8fr 1.3fr 0.9fr;
+//          grid-template-rows: 81px 742px;
+//          gap: 0px 0px;
+//          grid-template-areas:
+//             "header header header"
+//             "content content sidebar";
+//          justify-items: stretch;
+//       }
+//       &__items {
+//          display: grid;
+//          grid-template-columns: 250px 250px 250px;
+//          grid-template-rows: 300px 300px;
+//          gap: 150px 0px;
+//          grid-template-areas:
+//             ". . ."
+//             ". . .";
+//          grid-area: content;
+//          justify-content: space-evenly;
+//          align-content: center;
+//          justify-items: stretch;
+//          align-items: stretch;
+//          grid-area: content;
+//          .items__basket {
+//             border: 0.5px solid #cfcfcf;
+//             // width: 247.02px;
+//             height: 297px;
+//             display: flex;
+//             flex-direction: column;
+//             border-radius: 3px;
+//             .basket__image {
+//                width: 249px;
+//                height: 188px;
+//                text-align: center;
+//                img {
+//                   width: 228px;
+//                   height: 130px;
+//                }
+//             }
+//             .basket__title {
+//                font-family: "Roboto";
+//                font-style: normal;
+//                font-weight: 700;
+//                font-size: 14px;
+//                line-height: 16px;
+//                padding: 0 0 13px 15px;
+//             }
+//             .basket__info {
+//                display: flex;
+//                padding: 0 0 15px 15px;
+//                .basket__shoppingcart {
+//                   width: 40px;
+//                   height: 40px;
+//                   border-radius: 3px;
+//                   background: #3366ff;
+//                   text-align: center;
+//                   display: flex;
+//                   justify-content: center;
+//                   align-items: center;
+//                }
+//                .basket__price {
+//                   font-family: "Roboto";
+//                   font-style: normal;
+//                   font-weight: 400;
+//                   font-size: 14px;
+//                   line-height: 16px;
+//                   text-align: center;
+//                   align-self: center;
+//                   padding: 0 0 0 15px;
+//                }
+//             }
+//          }
+//       }
+//       &__sidebar {
+//          border-left: 0.5px solid #cfcfcf;
+//          display: grid;
+//          grid-template-columns: 1fr 1fr 1fr;
+//          grid-template-rows: 452px 574px 1fr;
+//          gap: 0px 0px;
+//          grid-template-areas:
+//             "basket basket basket"
+//             "receipt receipt receipt"
+//             "receipt receipt receipt";
+//          grid-area: sidebar;
+//          height: 1000px;
+//          .sidebar__container {
+//             display: flex;
+//             align-items: center;
+//             flex-direction: column;
+//             .shipping__title {
+//                display: none;
+//             }
+//             .sidebar__mybaskets {
+//                grid-area: basket;
+//                display: flex;
+//                flex-direction: column;
+//                .sidebar__basket {
+//                   grid-area: basket;
+//                   display: flex;
+
+//                   .shoes__title {
+//                   }
+//                   .shoes__count {
+//                      .count__minus {
+//                      }
+//                      .count__number {
+//                      }
+//                      .count__plus {
+//                      }
+//                   }
+//                   .shoes__price {
+//                   }
+//                }
+//             }
+//             .sidebar__receipt {
+//                display: flex;
+//                grid-area: "receipt";
+//                // flex-direction: column;
+//                justify-content: space-between;
+//                .receipt__subtotal {
+//                   .subtotal__title {
+//                   }
+//                   .subtotal__price {
+//                   }
+//                }
+//                .receipt__tax {
+//                   .tax__title {
+//                   }
+//                   .tax__price {
+//                   }
+//                }
+//                .receipt__shipping {
+//                   .shipping__title {
+//                   }
+//                   .shipping__price {
+//                   }
+//                }
+//                .receipt__total {
+//                   .total__title {
+//                   }
+//                   .total__price {
+//                   }
+//                }
+//             }
+//          }
+//       }
+//    }
+// }
+
 .wrapper {
    .header {
       grid-area: header;
       border-bottom: 0.5px solid #cfcfcf;
-      max-width: 100%;
       &__container {
          display: flex;
          justify-content: space-between;
          align-items: center;
          max-width: 95%;
-         margin: 0 auto;
+         // margin: 0 auto;
          min-height: 81px;
+         max-width: 100%;
+         margin: 0 30px 0 30px;
       }
       &__logo {
+         flex-shrink: 0;
       }
       &__shoppingcart {
-         position: relative;
+         flex-shrink: 0;
          .shoppingcart__circle {
             text-align: center;
             font-family: "Roboto";
@@ -33,8 +228,8 @@ body {
             color: #ffffff;
             border-radius: 50%;
             position: absolute;
-            bottom: 22px;
-            right: -7px;
+            top: 21px;
+            right: 23px;
 
             span {
                position: relative;
@@ -45,45 +240,37 @@ body {
    }
    .content {
       &__container {
-         max-width: 1500px;
-         margin: 0 auto;
-         display: grid;
-         grid-template-columns: 0.8fr 1.3fr 0.9fr;
-         grid-template-rows: 81px 1230px;
-         gap: 0px 0px;
-         grid-template-areas:
-            "header header header"
-            "content content sidebar";
-         justify-items: stretch;
+         display: flex;
       }
       &__items {
-         display: grid;
-         grid-template-columns: 250px 250px 250px;
-         grid-template-rows: 300px 300px;
-         gap: 150px 0px;
-         grid-template-areas:
-            ". . ."
-            ". . .";
-         grid-area: content;
-         justify-content: space-evenly;
-         align-content: center;
-         justify-items: stretch;
-         align-items: stretch;
-         grid-area: content;
+         flex: 0 0 auto;
+         height: 300px;
+         display: flex;
+         flex-wrap: wrap;
+         margin: 60px 100px 223px 170px;
+         @media (max-width: 1349px) {
+            margin: 60px 110px 0 110px;
+            color: red;
+         }
+         @media (max-width: 1299px) {
+         }
+
          .items__basket {
-            border: 0.5px solid #cfcfcf;
-            // width: 247.02px;
-            height: 297px;
+            border: 0.1px solid #cfcfcf5d;
+            margin: 0 70px 50px 0;
             display: flex;
             flex-direction: column;
-            border-radius: 3px;
+            flex: 0 0 250px;
+
             .basket__image {
-               width: 249px;
-               height: 188px;
+               // width: 249px;
+               // flex-basis: 249px;
+               // height: 188px;
                text-align: center;
+               margin: 29px 0 32px 0;
+               // flex-shrink: 2;
                img {
-                  width: 228px;
-                  height: 130px;
+                  // border: 0.1px solid red;
                }
             }
             .basket__title {
@@ -93,10 +280,18 @@ body {
                font-size: 14px;
                line-height: 16px;
                padding: 0 0 13px 15px;
+               // height: 30px;
+               // flex-basis: 165px;
+               // flex-shrink: 2;
+               // flex-grow: 1;
             }
             .basket__info {
                display: flex;
                padding: 0 0 15px 15px;
+               align-items: end;
+               flex: 0 0 auto;
+               // flex-shrink: 0;
+               position: relative;
                .basket__shoppingcart {
                   width: 40px;
                   height: 40px;
@@ -106,81 +301,145 @@ body {
                   display: flex;
                   justify-content: center;
                   align-items: center;
+                  flex-shrink: 0;
                }
                .basket__price {
+                  position: relative;
                   font-family: "Roboto";
                   font-style: normal;
                   font-weight: 400;
                   font-size: 14px;
                   line-height: 16px;
                   text-align: center;
-                  align-self: center;
                   padding: 0 0 0 15px;
+                  bottom: 10px;
                }
             }
          }
       }
       &__sidebar {
-         display: grid;
-         grid-template-columns: 1fr 1fr 1fr;
-         grid-template-rows: 452px 574px 1fr;
-         gap: 0px 0px;
-         grid-template-areas:
-            "basket basket basket"
-            "receipt receipt receipt"
-            "receipt receipt receipt";
-         grid-area: sidebar;
-         display: flex;
-         align-items: center;
-         flex-direction: column;
-         .shipping__title {
-         }
-         .sidebar__mybaskets {
-            grid-area: basket;
+         border-left: 0.5px solid #cfcfcf;
 
-            .sidebar__basket {
-               grid-area: basket;
-               .shoes__title {
-               }
-               .shoes__count {
-                  .count__minus {
-                  }
-                  .count__number {
-                  }
-                  .count__plus {
-                  }
-               }
-               .shoes__price {
-               }
-            }
-         }
-         .sidebar__receipt {
+         .sidebar__container {
+            font-family: "Roboto";
             display: flex;
-            grid-area: "receipt";
-            // flex-direction: column;
-            justify-content: space-between;
-            .receipt__subtotal {
-               .subtotal__title {
+            flex-direction: column;
+            flex: 0 0 410px;
+            .sidebar__mybaskets {
+               .sidebar__title {
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 18px;
+                  line-height: 21px;
+                  padding-left: 40px;
+                  padding-top: 40px;
                }
-               .subtotal__price {
+               .sidebar__basket {
+                  padding: 0 0 0 5px;
+                  display: grid;
+                  grid-template-columns: 100px 230px;
+                  margin: 30px 40px 40px 40px;
+                  grid-template-areas:
+                     "picture title cross"
+                     "picture number cross";
+                  height: 70px;
+                  .shoes__image {
+                     grid-area: picture;
+                     display: flex;
+                     align-items: flex-end;
+                     // height: 70px;
+                     img {
+                        width: 90px;
+                        height: 51px;
+                     }
+                  }
+                  .shoes__title {
+                     grid-area: title;
+                     font-style: normal;
+                     font-family: "Roboto";
+                     font-weight: 400;
+                     font-size: 14px;
+                     line-height: 16px;
+                     width: 202px;
+                  }
+                  .shoes__count {
+                     grid-area: number;
+                     display: flex;
+                     align-items: center;
+                     justify-content: space-between;
+                     // padding: 15px;
+                     width: 145px;
+                     // margin: 5px;
+                     .count__minus {
+                     }
+                     .count__number {
+                     }
+                     .count__plus {
+                     }
+                     .count__price {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 16px;
+                     }
+                  }
+                  .shoes__price {
+                     font-style: normal;
+                     font-weight: 400;
+                     font-size: 14px;
+                     line-height: 16px;
+                  }
+                  .shoes__cross {
+                     grid-area: cross;
+                  }
                }
             }
-            .receipt__tax {
-               .tax__title {
-               }
-               .tax__price {
-               }
-            }
-            .receipt__shipping {
-               .shipping__title {
-               }
-               .shipping__price {
-               }
-            }
-            .receipt__total {
-               .total__title {
-               }
-               .total__price {
+            .sidebar__receipt {
+               border-top: 1px solid #cfcfcf;
+               height: 100vh;
+               .receipt__container {
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 14px;
+                  line-height: 34px;
+                  display: flex;
+                  flex-direction: column;
+                  margin: 40px 55px 0 41px;
+                  .receipt__subtotal {
+                     display: flex;
+                     justify-content: space-between;
+                     .subtotal__title {
+                     }
+                     .subtotal__price {
+                     }
+                  }
+                  .receipt__tax {
+                     display: flex;
+                     justify-content: space-between;
+                     .tax__title {
+                     }
+                     .tax__price {
+                     }
+                  }
+                  .receipt__shipping {
+                     display: flex;
+                     justify-content: space-between;
+                     .shipping__title {
+                     }
+                     .shipping__price {
+                     }
+                  }
+                  .receipt__total {
+                     display: flex;
+                     justify-content: space-between;
+                     font-weight: 700;
+                     font-size: 18px;
+
+                     .total__title {
+                     }
+                     .total__price {
+                     }
+                  }
                }
             }
          }
