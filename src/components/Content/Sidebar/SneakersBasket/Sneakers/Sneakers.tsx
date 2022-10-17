@@ -1,5 +1,5 @@
 import React from 'react'
-import { SneakerPropsType } from '../../../../../types/types'
+import { SneakerPropsType } from '../../../../../@types/types'
 
 const Sneakers: React.FC<SneakerPropsType> = ({ title, image, price }) => {
    return (
@@ -23,7 +23,7 @@ const Sneakers: React.FC<SneakerPropsType> = ({ title, image, price }) => {
                </svg>
             </div>
             <div className="count__price">
-               {price}
+               $ {price}
             </div>
          </div>
          <div className="shoes__cross">

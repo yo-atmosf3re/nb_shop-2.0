@@ -4,6 +4,7 @@ import NB670 from './670.png'
 import NB920 from './920.png'
 import NB5740 from './5740.png'
 import NBXR from './x-racer.png'
+import NB574L from './574-large.png'
 
 export {
    NB373,
@@ -12,4 +13,5 @@ export {
    NB920,
    NB5740,
    NBXR,
+   NB574L
 }

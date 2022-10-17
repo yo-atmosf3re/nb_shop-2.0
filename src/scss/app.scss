@@ -12,35 +12,100 @@ body {
          justify-content: space-between;
          align-items: center;
          max-width: 95%;
-         // margin: 0 auto;
          min-height: 81px;
          max-width: 100%;
          margin: 0 30px 0 30px;
       }
       &__logo {
-         flex-shrink: 0;
-      }
-      &__shoppingcart {
-         flex-shrink: 0;
-         .shoppingcart__circle {
-            text-align: center;
+         flex: 0 0 auto;
+         span {
+            color: black;
+            text-decoration: none;
             font-family: "Roboto";
             font-style: normal;
             font-weight: 400;
-            font-size: 10px;
-            line-height: 12px;
-            width: 13px;
-            height: 13px;
-            background-color: #3366ff;
-            color: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            top: 21px;
-            right: 23px;
-
-            span {
+            font-size: 18px;
+            line-height: 21px;
+         }
+      }
+      &__shoppingcart {
+         width: 24px;
+         height: 21px;
+         @media (max-width: 768px) {
+            display: flex;
+         }
+         .shoppingcart__cart {
+            @media (max-width: 768px) {
                position: relative;
-               top: 0.5px;
+               right: 40px;
+            }
+            @media (max-width: 450px) {
+               position: relative;
+               right: 0;
+            }
+            .cart__circle {
+               text-align: center;
+               font-family: "Roboto";
+               font-style: normal;
+               font-weight: 400;
+               font-size: 10px;
+               line-height: 12px;
+               width: 13px;
+               height: 13px;
+               background-color: #3366ff;
+               color: #ffffff;
+               border-radius: 50%;
+               position: absolute;
+               top: 21px;
+               right: 23px;
+               span {
+                  position: relative;
+                  top: 0.5px;
+               }
+               @media (max-width: 768px) {
+                  position: relative;
+                  top: -34px;
+                  left: 22px;
+               }
+            }
+         }
+
+         .shoppingcart__burger {
+            display: none;
+            @media (max-width: 768px) {
+               display: inline-block;
+               position: relative;
+               cursor: pointer;
+               width: 25px;
+               height: 25px;
+               right: 15px;
+               span {
+                  background-color: black;
+                  position: absolute;
+                  top: 12px;
+                  width: 29px;
+                  height: 2px;
+               }
+               &:after {
+                  content: "";
+                  position: absolute;
+                  left: 0px;
+                  top: 5px;
+                  width: 29px;
+                  background-color: black;
+                  height: 2px;
+               }
+               &:before {
+                  content: "";
+                  position: absolute;
+                  bottom: 0;
+                  width: 29px;
+                  background-color: black;
+                  height: 2px;
+               }
+            }
+            @media (max-width: 450px) {
+               display: none;
             }
          }
       }
@@ -57,9 +122,12 @@ body {
          margin: 60px 100px 223px 170px;
          @media (max-width: 1349px) {
             margin: 60px 110px 0 110px;
-            color: red;
          }
          @media (max-width: 1299px) {
+            margin: 60px 0 223px 80px;
+         }
+         @media (max-width: 410px) {
+            margin: 60px 0 223px 65px;
          }
 
          .items__basket {
@@ -84,15 +152,12 @@ body {
                padding: 0 0 13px 15px;
                height: 30px;
                flex-basis: 32px;
-               // flex-shrink: 2;
-               // flex-grow: 1;
             }
             .basket__info {
                display: flex;
                padding: 0 0 15px 15px;
                align-items: end;
                flex: 0 0 auto;
-               // flex-shrink: 0;
                position: relative;
                .basket__shoppingcart {
                   width: 40px;
@@ -121,7 +186,9 @@ body {
       }
       &__sidebar {
          border-left: 0.5px solid #cfcfcf;
-
+         @media (max-width: 768px) {
+            display: none;
+         }
          .sidebar__container {
             font-family: "Roboto";
             display: flex;
@@ -196,6 +263,245 @@ body {
                }
             }
             .sidebar__receipt {
+               border-top: 1px solid #cfcfcf;
+               height: 100vh;
+               .receipt__container {
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 14px;
+                  line-height: 34px;
+                  display: flex;
+                  flex-direction: column;
+                  margin: 40px 55px 0 41px;
+                  .receipt__subtotal {
+                     display: flex;
+                     justify-content: space-between;
+                     .subtotal__title {
+                     }
+                     .subtotal__price {
+                     }
+                  }
+                  .receipt__tax {
+                     display: flex;
+                     justify-content: space-between;
+                     .tax__title {
+                     }
+                     .tax__price {
+                     }
+                  }
+                  .receipt__shipping {
+                     display: flex;
+                     justify-content: space-between;
+                     .shipping__title {
+                     }
+                     .shipping__price {
+                     }
+                  }
+                  .receipt__total {
+                     display: flex;
+                     justify-content: space-between;
+                     font-weight: 700;
+                     font-size: 18px;
+
+                     .total__title {
+                     }
+                     .total__price {
+                     }
+                  }
+               }
+            }
+         }
+      }
+      &__fullpage {
+         font-family: "Roboto";
+         flex: 1 1 auto;
+         display: flex;
+         flex-direction: column;
+         margin: 38px 10px 0 170px;
+         @media (max-width: 1474px) {
+            margin: 38px 10px 0 45px;
+         }
+         @media (max-width: 1200px) {
+            margin: 38px 20px 0 110px;
+         }
+         @media (max-width: 885px) {
+            margin: 38px 20px 0 45px;
+         }
+         @media (max-width: 768px) {
+            margin: 38px 10px 0 99px;
+            padding: 0 20px 0 0;
+         }
+         @media (max-width: 410px) {
+            margin: 38px 40px 0 40px;
+         }
+         .fullpage__button-back {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 30px;
+            width: 156px;
+            height: 40px;
+            background: #3366ff;
+            color: white;
+            border-radius: 3px;
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+               transform: scale(1.02);
+               background: #1a51f5;
+            }
+         }
+         .fullpage__image-large {
+            margin: 20px 0;
+            @media (max-width: 1474px) {
+               img {
+                  width: 99%;
+               }
+            }
+            @media (max-width: 1200px) {
+               img {
+                  max-width: 40vw;
+                  min-width: 230px;
+               }
+            }
+            @media (max-width: 768px) {
+               img {
+                  max-width: 570px;
+               }
+            }
+            @media (max-width: 410px) {
+               img {
+                  max-width: 330px;
+               }
+            }
+         }
+         .fullpage__sneakers-title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 28px;
+         }
+         .fullpage__items-model {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+         }
+         .fullpage__info {
+            display: flex;
+            padding: 20px 0 0 0;
+            align-items: end;
+            flex: 0 0 auto;
+            // flex-shrink: 0;
+            position: relative;
+            .info__shoppingcart {
+               width: 40px;
+               height: 40px;
+               border-radius: 3px;
+               background: #3366ff;
+               text-align: center;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-shrink: 0;
+            }
+            .info__price {
+               position: relative;
+               font-style: normal;
+               font-weight: 400;
+               font-size: 24px;
+               line-height: 28px;
+               text-align: center;
+               padding: 0 0 0 15px;
+               bottom: 7px;
+            }
+         }
+      }
+      &__sidebarpage {
+         margin: 30px 0 0 0;
+         .sidebarpage__container {
+            font-family: "Roboto";
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 410px;
+            .sidebarpage__cross {
+               text-align: right;
+               padding: 0 55px 0 0;
+            }
+            .sidebarpage__mybaskets {
+               .sidebarpage__title {
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 18px;
+                  line-height: 21px;
+                  padding-left: 40px;
+                  padding-top: 40px;
+               }
+               .sidebarpage__basket {
+                  padding: 0 0 0 5px;
+                  display: grid;
+                  grid-template-columns: 100px 230px;
+                  margin: 30px 40px 40px 40px;
+                  grid-template-areas:
+                     "picture title cross"
+                     "picture number cross";
+                  height: 70px;
+                  .shoes__image {
+                     grid-area: picture;
+                     display: flex;
+                     align-items: flex-end;
+                     img {
+                        width: 90px;
+                        height: 51px;
+                     }
+                  }
+                  .shoes__title {
+                     grid-area: title;
+                     font-style: normal;
+                     font-family: "Roboto";
+                     font-weight: 400;
+                     font-size: 14px;
+                     line-height: 16px;
+                     width: 202px;
+                  }
+                  .shoes__count {
+                     grid-area: number;
+                     display: flex;
+                     align-items: center;
+                     justify-content: space-between;
+                     width: 145px;
+                     .count__minus {
+                     }
+                     .count__number {
+                     }
+                     .count__plus {
+                     }
+                     .count__price {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 16px;
+                        width: 50px;
+                     }
+                  }
+                  .shoes__price {
+                     font-style: normal;
+                     font-weight: 400;
+                     font-size: 14px;
+                     line-height: 16px;
+                  }
+                  .shoes__cross {
+                     grid-area: cross;
+                  }
+               }
+            }
+            .sidebarpage__receipt {
                border-top: 1px solid #cfcfcf;
                height: 100vh;
                .receipt__container {
