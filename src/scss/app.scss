@@ -126,6 +126,14 @@ body {
          @media (max-width: 1299px) {
             margin: 60px 0 223px 80px;
          }
+         @media (max-width: 1158px) {
+            margin: 60px 0 223px 30px;
+         }
+         @media (max-width: 1108px) {
+            margin: 60px 0 223px 60px7;
+            // flex-shrink: 0;
+            flex-grow: 2;
+         }
          @media (max-width: 410px) {
             margin: 60px 0 223px 65px;
          }
@@ -324,6 +332,7 @@ body {
          @media (max-width: 1200px) {
             margin: 38px 20px 0 110px;
          }
+
          @media (max-width: 885px) {
             margin: 38px 20px 0 45px;
          }
