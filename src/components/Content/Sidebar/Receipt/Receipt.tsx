@@ -1,12 +1,14 @@
 import React from 'react'
+import { ReceiptPropsType } from '../../../../@types/types'
+import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths'
 
-const Receipt = () => {
+const Receipt: React.FC<ReceiptPropsType> = ({ totalPrice }) => {
    return (
       <div className="sidebar__receipt">
          <div className='receipt__container'>
             <div className="receipt__subtotal">
                <div className="subtotal__title">Subtotal</div>
-               <div className="subtotal__price">$ 1 850</div>
+               <div className="subtotal__price">$ {divedesNumbers(totalPrice)}</div>
             </div>
             <div className="receipt__tax">
                <div className="tax__title">Tax</div>
@@ -18,7 +20,7 @@ const Receipt = () => {
             </div>
             <div className="receipt__total">
                <div className="total__title">Total</div>
-               <div className="total__price">$ 2 100</div>
+               <div className="total__price">$ <>{totalPrice === 0 ? 0 : divedesNumbers(totalPrice + 100 + 150)}</></div>
             </div>
          </div>
       </div>

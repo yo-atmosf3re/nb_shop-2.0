@@ -3,10 +3,11 @@ import { store } from "../redux/store"
 
 // ** Types of components
 // ** Sneakers.tsx
-export type SneakerPropsType = {
+export type SneakersPropsType = {
    price: number
    title: string
    image: string
+   id: number
 }
 // ** SneakersBlock.tsx
 export type SneakersBlockPropsType = {
@@ -14,6 +15,10 @@ export type SneakersBlockPropsType = {
    title: string
    image: string
    id: number
+}
+// ** Receipt.tsx
+export type ReceiptPropsType = {
+   totalPrice: number
 }
 
 // ?? Typing for RTK
@@ -31,4 +36,5 @@ export type ItemsInitialType = {
 export interface ItemsSliceStateType {
    items: ItemsInitialType[]
    totalPrice: number
+   totalCount: number
 }

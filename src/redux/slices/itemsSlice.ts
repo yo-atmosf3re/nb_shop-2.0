@@ -12,8 +12,8 @@ const initialState: ItemsSliceStateType = {
       // { id: 5, image: NBXR, title: 'New Balance X-Racer Utility', price: '$ 1 000' },
       // { id: 6, image: NB5740, title: 'New Balance 5740 Think Colorfully', price: '$ 940' },
    ],
-   totalPrice: 0,
-
+   totalPrice: 1850,
+   totalCount: 2,
 }
 
 const itemsSlice = createSlice({

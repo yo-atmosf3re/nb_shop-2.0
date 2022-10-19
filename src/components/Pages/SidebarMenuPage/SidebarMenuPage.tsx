@@ -1,9 +1,8 @@
 import React from 'react'
 import Receipt from '../../Content/Sidebar/Receipt/Receipt'
 import Sidebar from '../../Content/Sidebar/Sidebar'
-import Sneakers from '../../Content/Sidebar/SneakersBasket/Sneakers/Sneakers'
+import Sneakers from '../../Content/Sidebar/Sneakers/Sneakers'
 import { NB373, NB574, NB670, NB920, NB5740, NBXR } from '../../../assets/img/sneakers';
-import SneakersBasket from '../../Content/Sidebar/SneakersBasket/SneakersBasket'
 
 const SidebarMenuPage = () => {
    return (
