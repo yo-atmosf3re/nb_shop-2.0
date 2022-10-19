@@ -8,13 +8,15 @@ export type SneakersPropsType = {
    title: string
    image: string
    id: number
+   count: number
 }
 // ** SneakersBlock.tsx
 export type SneakersBlockPropsType = {
-   price: string
+   price: number
    title: string
    image: string
    id: number
+   count: number
 }
 // ** Receipt.tsx
 export type ReceiptPropsType = {
@@ -37,4 +39,8 @@ export interface ItemsSliceStateType {
    items: ItemsInitialType[]
    totalPrice: number
    totalCount: number
+}
+// ?? productSlice.ts
+export interface ProductSliceStateType {
+   products: ItemsInitialType[]
 }

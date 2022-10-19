@@ -8,7 +8,6 @@ import Sneakers from './Sneakers/Sneakers';
 
 const Sidebar = () => {
    const { totalPrice, items } = useSelector((state: RootState) => state.items)
-   const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
    return (
       <div className="content__sidebar">
          <div className='sidebar__container'>

@@ -201,16 +201,16 @@ body {
          .sidebar__container {
             display: flex;
             flex-direction: column;
-            width: 410px;
+            min-width: 433px;
             // flex: 0 0 410px;
             .sidebar__emptycart {
-               padding: 50px;
-               font-size: 26px;
+               margin: 50px;
+               font-size: 14px;
                text-align: center;
                color: #cfcfcf;
             }
             .sidebar__mybaskets {
-               height: 311px;
+               min-height: 311px;
                .sidebar__title {
                   font-style: normal;
                   font-weight: 700;
