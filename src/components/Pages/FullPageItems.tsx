@@ -6,7 +6,7 @@ import { NB574L } from '../../assets/img/sneakers'
 import { addItems } from '../../redux/slices/itemsSlice'
 import { divedesNumbers } from '../../utils/divedesNumbersIntoThousandths'
 
-const FullPageItems: React.FC<FullPageItemsPropsType> = ({ count, id, image, price, title }) => {
+const FullPageItems: React.FC<FullPageItemsPropsType> = React.memo(({ count, id, image, price, title }) => {
    const dispatch = useDispatch();
    const addItemCart = () => dispatch(addItems({ count, id, image, price, title }))
    return (
@@ -31,5 +31,5 @@ const FullPageItems: React.FC<FullPageItemsPropsType> = ({ count, id, image, pri
       </>
    )
 }
-
+)
 export default FullPageItems

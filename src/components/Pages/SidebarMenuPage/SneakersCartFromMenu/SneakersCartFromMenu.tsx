@@ -4,7 +4,7 @@ import { ItemsInitialType, SneakersCartFromMenuPropsType } from '../../../../@ty
 import { removeItem, minusItem, addItems } from '../../../../redux/slices/itemsSlice'
 import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths'
 
-const SneakersCartFromMenu: React.FC<SneakersCartFromMenuPropsType> = ({ count, id, image, price, title }) => {
+const SneakersCartFromMenu: React.FC<SneakersCartFromMenuPropsType> = React.memo(({ count, id, image, price, title }) => {
    const dispatch = useDispatch();
    const totalPrice = count > 1 ? divedesNumbers(price * count) : divedesNumbers(price)
    const deleteItems = () => dispatch(removeItem(id))
@@ -41,6 +41,6 @@ const SneakersCartFromMenu: React.FC<SneakersCartFromMenuPropsType> = ({ count, 
          </div>
       </div>
    )
-}
+})
 
 export default SneakersCartFromMenu

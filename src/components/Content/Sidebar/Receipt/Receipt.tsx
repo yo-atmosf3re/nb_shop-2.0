@@ -2,7 +2,7 @@ import React from 'react'
 import { ReceiptPropsType } from '../../../../@types/types'
 import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths'
 
-const Receipt: React.FC<ReceiptPropsType> = ({ totalPrice }) => {
+const Receipt: React.FC<ReceiptPropsType> = React.memo(({ totalPrice }) => {
    const totalCount = totalPrice === 0 ? 0 : divedesNumbers(totalPrice + 100 + 150);
    return (
       <div className="sidebar__receipt">
@@ -26,6 +26,6 @@ const Receipt: React.FC<ReceiptPropsType> = ({ totalPrice }) => {
          </div>
       </div>
    )
-}
+})
 
 export default Receipt

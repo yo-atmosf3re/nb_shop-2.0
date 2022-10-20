@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Sidebar from '../Content/Sidebar/Sidebar'
 import Header from '../Header/Header'
 
-const MainLayout = () => {
+const MainLayout = React.memo(() => {
    return (
       <div className='wrapper'>
          <Header />
@@ -12,6 +12,6 @@ const MainLayout = () => {
          </div>
       </div>
    )
-}
+})
 
 export default MainLayout

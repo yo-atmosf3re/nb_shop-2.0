@@ -1,9 +1,10 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../@types/types';
 import Receipt from './Receipt/Receipt';
 import Sneakers from './Sneakers/Sneakers';
 
-const Sidebar = () => {
+const Sidebar = React.memo(() => {
    const { totalPrice, items } = useSelector((state: RootState) => state.items)
    return (
       <div className="content__sidebar">
@@ -21,6 +22,6 @@ const Sidebar = () => {
          </div>
       </div>
    )
-}
+})
 
 export default Sidebar

@@ -3,8 +3,9 @@ import { RootState } from '../../../@types/types';
 import SneakersCartFromMenu from './SneakersCartFromMenu/SneakersCartFromMenu';
 import { divedesNumbers } from '../../../utils/divedesNumbersIntoThousandths';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
-const SidebarMenuPage = () => {
+const SidebarMenuPage = React.memo(() => {
    const { totalPrice, items } = useSelector((state: RootState) => state.items)
    const finalPrice = totalPrice === 0 ? 0 : divedesNumbers(totalPrice + 100 + 150);
    return (
@@ -50,6 +51,6 @@ const SidebarMenuPage = () => {
          </div>
       </div>
    )
-}
+})
 
 export default SidebarMenuPage

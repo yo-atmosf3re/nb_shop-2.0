@@ -5,7 +5,7 @@ import { ItemsInitialType, SneakersPropsType } from '../../../../@types/types'
 import { addItems, minusItem, removeItem } from '../../../../redux/slices/itemsSlice';
 import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths';
 
-const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count }) => {
+const Sneakers: React.FC<SneakersPropsType> = React.memo(({ title, image, price, id, count }) => {
    const dispatch = useDispatch();
 
    const deleteItems = () => dispatch(removeItem(id))
@@ -47,6 +47,6 @@ const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count 
          </div>
       </div>
    )
-}
+})
 
 export default Sneakers

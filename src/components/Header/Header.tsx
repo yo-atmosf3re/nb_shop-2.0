@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { ItemsInitialType, RootState } from '../../@types/types'
 
-const Header = () => {
+const Header = React.memo(() => {
    const { items } = useSelector((state: RootState) => state.items)
    const totalCount = items.reduce((sum: number, items: ItemsInitialType) => sum + items.count, 0)
    return (
@@ -40,6 +40,6 @@ const Header = () => {
          </div>
       </div>
    )
-}
+})
 
 export default Header
