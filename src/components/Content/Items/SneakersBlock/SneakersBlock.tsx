@@ -5,7 +5,7 @@ import { SneakersBlockPropsType } from '../../../../@types/types'
 import { addItems } from '../../../../redux/slices/itemsSlice'
 import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths'
 
-const SneakersBlock: React.FC<SneakersBlockPropsType> = ({ image, title, price, id, count }) => {
+const SneakersBlock: React.FC<SneakersBlockPropsType> = React.memo(({ image, title, price, id, count }) => {
    const dispatch = useDispatch()
    const onClickAddItem = () => dispatch(addItems({ id, title, price, image, count }))
    return (
@@ -26,6 +26,6 @@ const SneakersBlock: React.FC<SneakersBlockPropsType> = ({ image, title, price, 
          </div>
       </div>
    )
-}
+})
 
 export default SneakersBlock

@@ -1,7 +1,5 @@
 import React from 'react'
 import './scss/app.scss'
-
-import Header from './components/Header/Header';
 import Content from './components/Content/Content';
 import { Route, Routes } from 'react-router-dom';
 import MainLayout from './components/Pages/MainLayout';
@@ -9,7 +7,7 @@ import ProductPage from './components/Pages/ProductPage';
 import SidebarMenuPage from './components/Pages/SidebarMenuPage/SidebarMenuPage';
 
 
-const App = () => {
+const App = React.memo(() => {
   return (
     <Routes>
       <Route path='/' element={<MainLayout />}>
@@ -20,13 +18,6 @@ const App = () => {
       </Route>
     </Routes>
   )
-}
+})
 
 export default App;
-
-// return (
-//   <div className='wrapper'>
-//     <Header />
-//     <Content />
-//   </div>
-// );
