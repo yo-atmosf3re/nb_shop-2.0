@@ -1,10 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { FullPageItemsPropsType, ItemsInitialType, RootState } from '../../../@types/types'
-import { NB574L } from '../../../assets/img/sneakers'
-import { addItems } from '../../../redux/slices/itemsSlice'
-import { divedesNumbers } from '../../../utils/divedesNumbersIntoThousandths'
+import { FullPageItemsPropsType, ItemsInitialType, RootState } from '../../@types/types'
+import { NB574L } from '../../assets/img/sneakers'
+import { addItems } from '../../redux/slices/itemsSlice'
+import { divedesNumbers } from '../../utils/divedesNumbersIntoThousandths'
 
 const FullPageItems: React.FC<FullPageItemsPropsType> = ({ count, id, image, price, title }) => {
    const dispatch = useDispatch();

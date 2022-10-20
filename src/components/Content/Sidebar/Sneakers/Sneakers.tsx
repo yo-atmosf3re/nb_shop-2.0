@@ -1,21 +1,18 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { ItemsInitialType, RootState, SneakersPropsType } from '../../../../@types/types'
+import { ItemsInitialType, SneakersPropsType } from '../../../../@types/types'
 import { addItems, minusItem, removeItem } from '../../../../redux/slices/itemsSlice';
 import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths';
 
 const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count }) => {
    const dispatch = useDispatch();
-   const { totalCount, totalPrice } = useSelector((state: RootState) => state.items)
 
    const deleteItems = () => dispatch(removeItem(id))
-   const incCount = () => {
-      dispatch(addItems({ title, image, price, id, count } as ItemsInitialType))
-   }
-   const decCount = () => {
-      dispatch(minusItem(id))
-   }
+   const incCount = () => dispatch(addItems({ title, image, price, id, count } as ItemsInitialType))
+   const decCount = () => dispatch(minusItem(id))
+
+   const totalCount = count > 1 ? divedesNumbers(price * count) : divedesNumbers(price);
 
    return (
       <div className="sidebar__basket">
@@ -40,7 +37,7 @@ const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count 
                </svg>
             </button>
             <div className="count__price">
-               $ {count > 1 ? divedesNumbers(price * count) : divedesNumbers(price)}
+               $ {totalCount}
             </div>
          </div>
          <div onClick={deleteItems} className="shoes__cross">

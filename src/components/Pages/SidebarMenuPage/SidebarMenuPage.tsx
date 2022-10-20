@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const SidebarMenuPage = () => {
    const { totalPrice, items } = useSelector((state: RootState) => state.items)
-
+   const finalPrice = totalPrice === 0 ? 0 : divedesNumbers(totalPrice + 100 + 150);
    return (
       <div className="content__sidebarpage">
          <div className='sidebarpage__container'>
@@ -43,7 +43,7 @@ const SidebarMenuPage = () => {
                   </div>
                   <div className="receipt__total">
                      <div className="total__title">Total</div>
-                     <div className="total__price"><>$ {totalPrice === 0 ? 0 : divedesNumbers(totalPrice + 100 + 150)}</></div>
+                     <div className="total__price"><>$ {finalPrice}</></div>
                   </div>
                </div>
             </div>

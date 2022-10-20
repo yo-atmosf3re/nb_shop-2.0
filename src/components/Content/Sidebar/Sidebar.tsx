@@ -1,8 +1,5 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../../@types/types';
-import { NB373, NB574, NB670, NB920, NB5740, NBXR } from '../../../assets/img/sneakers';
-import itemsSlice from '../../../redux/slices/itemsSlice';
 import Receipt from './Receipt/Receipt';
 import Sneakers from './Sneakers/Sneakers';
 

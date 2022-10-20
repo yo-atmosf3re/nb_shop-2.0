@@ -2,8 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { RootState } from '../../@types/types';
-import { NB373, NB574, NB670, NB920, NB5740, NBXR, NB574L } from '../../assets/img/sneakers';
-import FullPageItems from './FullPageItems/FullPageItems';
+import FullPageItems from './FullPageItems';
 
 const SneakersPage = () => {
    const { title } = useParams();

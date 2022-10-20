@@ -6,13 +6,10 @@ import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths'
 
 const SneakersCartFromMenu: React.FC<SneakersCartFromMenuPropsType> = ({ count, id, image, price, title }) => {
    const dispatch = useDispatch();
+   const totalPrice = count > 1 ? divedesNumbers(price * count) : divedesNumbers(price)
    const deleteItems = () => dispatch(removeItem(id))
-   const incCount = () => {
-      dispatch(addItems({ title, image, price, id, count } as ItemsInitialType))
-   }
-   const decCount = () => {
-      dispatch(minusItem(id))
-   }
+   const incCount = () => dispatch(addItems({ title, image, price, id, count } as ItemsInitialType))
+   const decCount = () => dispatch(minusItem(id))
    return (
       <div className="sidebarpage__basket">
          <div className='shoes__image'>
@@ -34,7 +31,7 @@ const SneakersCartFromMenu: React.FC<SneakersCartFromMenuPropsType> = ({ count, 
                </svg>
             </button>
             <div className="count__price">
-               $ {count > 1 ? divedesNumbers(price * count) : divedesNumbers(price)}
+               $ {totalPrice}
             </div>
          </div>
          <div onClick={deleteItems} className="shoes__cross">
