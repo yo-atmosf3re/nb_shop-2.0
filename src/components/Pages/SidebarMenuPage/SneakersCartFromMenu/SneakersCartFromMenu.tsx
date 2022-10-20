@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
-import { ItemsInitialType, RootState, SneakersPropsType } from '../../../../@types/types'
-import { addItems, minusItem, removeItem } from '../../../../redux/slices/itemsSlice';
-import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { ItemsInitialType, SneakersCartFromMenuPropsType } from '../../../../@types/types'
+import { removeItem, minusItem, addItems } from '../../../../redux/slices/itemsSlice'
+import { divedesNumbers } from '../../../../utils/divedesNumbersIntoThousandths'
 
-const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count }) => {
+const SneakersCartFromMenu: React.FC<SneakersCartFromMenuPropsType> = ({ count, id, image, price, title }) => {
    const dispatch = useDispatch();
-   const { totalCount, totalPrice } = useSelector((state: RootState) => state.items)
-
    const deleteItems = () => dispatch(removeItem(id))
    const incCount = () => {
       dispatch(addItems({ title, image, price, id, count } as ItemsInitialType))
@@ -16,13 +13,10 @@ const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count 
    const decCount = () => {
       dispatch(minusItem(id))
    }
-
    return (
-      <div className="sidebar__basket">
+      <div className="sidebarpage__basket">
          <div className='shoes__image'>
-            <Link to={`/product/${title}`}>
-               <img src={image} alt="" />
-            </Link>
+            <img src={image} alt="" />
          </div>
          <div className="shoes__title">
             {title}
@@ -52,4 +46,4 @@ const Sneakers: React.FC<SneakersPropsType> = ({ title, image, price, id, count 
    )
 }
 
-export default Sneakers
+export default SneakersCartFromMenu

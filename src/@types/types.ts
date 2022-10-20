@@ -22,6 +22,22 @@ export type SneakersBlockPropsType = {
 export type ReceiptPropsType = {
    totalPrice: number
 }
+// ** SneakersCartFromMenu.tsx
+export type SneakersCartFromMenuPropsType = {
+   price: number
+   title: string
+   image: string
+   id: number
+   count: number
+}
+// ** FullPageItems.tsx
+export type FullPageItemsPropsType = {
+   price: number
+   title: string
+   image: string
+   id: number
+   count: number
+}
 
 // ?? Typing for RTK
 export type RootState = ReturnType<typeof store.getState>

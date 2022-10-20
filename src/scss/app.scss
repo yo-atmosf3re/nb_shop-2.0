@@ -3,6 +3,17 @@
 body {
    font-family: "Roboto";
 }
+button {
+   padding: 0;
+   border: none;
+   font: inherit;
+   color: inherit;
+   background-color: transparent;
+   cursor: pointer;
+   &:disabled {
+      opacity: 0.5;
+   }
+}
 
 .wrapper {
    .header {
@@ -42,7 +53,7 @@ body {
             }
             @media (max-width: 450px) {
                position: relative;
-               right: 0;
+               right: 35px;
             }
             .cart__circle {
                text-align: center;
@@ -57,8 +68,8 @@ body {
                color: #ffffff;
                border-radius: 50%;
                position: absolute;
-               top: 21px;
-               right: 23px;
+               top: 25px;
+               right: 18px;
                span {
                   position: relative;
                   top: 0.5px;
@@ -106,7 +117,7 @@ body {
                }
             }
             @media (max-width: 450px) {
-               display: none;
+               // display: none;
             }
          }
       }
@@ -131,8 +142,7 @@ body {
             margin: 60px 0 223px 30px;
          }
          @media (max-width: 1108px) {
-            margin: 60px 0 223px 60px7;
-            // flex-shrink: 0;
+            margin: 60px 0 223px 60px;
             flex-grow: 2;
          }
          @media (max-width: 410px) {
@@ -178,6 +188,11 @@ body {
                   justify-content: center;
                   align-items: center;
                   flex-shrink: 0;
+                  transition: all 0.2s ease-in-out;
+                  &:hover {
+                     transform: scale(1.05);
+                     background: #1a51f5;
+                  }
                }
                .basket__price {
                   position: relative;
@@ -195,6 +210,7 @@ body {
       }
       &__sidebar {
          border-left: 0.5px solid #cfcfcf;
+         min-height: 100vh;
          @media (max-width: 768px) {
             display: none;
          }
@@ -202,7 +218,6 @@ body {
             display: flex;
             flex-direction: column;
             min-width: 433px;
-            // flex: 0 0 410px;
             .sidebar__emptycart {
                margin: 50px;
                font-size: 14px;
@@ -254,25 +269,10 @@ body {
                      justify-content: space-between;
                      width: 145px;
                      .count__minus {
-                        padding: 0;
-                        border: none;
-                        font: inherit;
-                        color: inherit;
-                        background-color: transparent;
-                        cursor: pointer;
-                        &:disabled {
-                           opacity: 0.5;
-                        }
                      }
                      .count__number {
                      }
                      .count__plus {
-                        padding: 0;
-                        border: none;
-                        font: inherit;
-                        color: inherit;
-                        background-color: transparent;
-                        cursor: pointer;
                      }
                      .count__price {
                         font-style: normal;
@@ -430,7 +430,6 @@ body {
             padding: 20px 0 0 0;
             align-items: end;
             flex: 0 0 auto;
-            // flex-shrink: 0;
             position: relative;
             .info__shoppingcart {
                width: 40px;
@@ -442,6 +441,11 @@ body {
                justify-content: center;
                align-items: center;
                flex-shrink: 0;
+               transition: all 0.2s ease-in-out;
+               &:hover {
+                  transform: scale(1.05);
+                  background: #1a51f5;
+               }
             }
             .info__price {
                position: relative;
@@ -464,9 +468,10 @@ body {
             flex: 0 0 410px;
             .sidebarpage__cross {
                text-align: right;
-               padding: 0 55px 0 0;
+               padding: 0 30px 0 0;
             }
             .sidebarpage__mybaskets {
+               min-width: 360.04px;
                .sidebarpage__title {
                   font-style: normal;
                   font-weight: 700;
@@ -530,7 +535,15 @@ body {
                   }
                   .shoes__cross {
                      grid-area: cross;
+                     position: relative;
+                     right: 30px;
                   }
+               }
+               .sidebarpage__emptycart {
+                  margin: 50px;
+                  font-size: 14px;
+                  text-align: left;
+                  color: #cfcfcf;
                }
             }
             .sidebarpage__receipt {
